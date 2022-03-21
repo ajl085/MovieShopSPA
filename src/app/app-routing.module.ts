@@ -6,9 +6,12 @@ const routes: Routes = [
   {
     path:"", component: HomeComponent
   },
-  // {
-  //   path:'movies/details/:id', component: MovieDetailsComponent
-  // }
+
+  // load the admin module(along with its components) lazily
+  // http://localhost:4200/admin
+  {
+    path: "admin", loadChildren: () => import("./admin/admin.module").then(mod => mod.AdminModule)
+  }
 ];
 
 @NgModule({
