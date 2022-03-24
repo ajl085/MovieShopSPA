@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthenticationService } from './core/services/authentication.service';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Movie Shop SPA';
-  company = "Antra";
+
+  constructor(private authService: AuthenticationService) {
+
+  }
+
+  ngOnInit(): void {
+    this.authService.populateUserInfo();
+  }
 }
