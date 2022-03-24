@@ -1,5 +1,9 @@
 <div class="card mb-4">
-    <a>
+    <!-- route our anchor tag to a routing URL http://localhost:4200/movies/details/2 -->
+    <!-- [routerLink] -->
+
+    <a [routerLink]="[ '/movies/details/', movieCard.id ]">
         <img class="img-fluid" src="{{movieCard.posterUrl}}" alt="{{movieCard.title}}">
     </a>
+
 </div>

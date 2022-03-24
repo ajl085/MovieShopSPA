@@ -10,7 +10,18 @@ const routes: Routes = [
   // load the admin module(along with its components) lazily
   // http://localhost:4200/admin
   {
-    path: "admin", loadChildren: () => import("./admin/admin.module").then(mod => mod.AdminModule)
+    path: "admin", loadChildren: () => import("./admin/admin.module").then(mod => mod.AdminModule),
+  },
+
+  {
+    path: "movies", loadChildren: () => import("./movies/movies.module").then(mod => mod.MoviesModule),
+  },
+
+  {
+    path: "user", loadChildren: () => import("./user/user.module").then(mod => mod.UserModule)
+  },
+  {
+    path: "account", loadChildren: () => import("./account/account.module").then(mod => mod.AccountModule)
   }
 ];
 

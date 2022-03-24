@@ -1,0 +1,30 @@
+<div>
+    <div class="row">
+        <div class="col-md-3 offset-2">
+            <div>
+                <img src="{{movie.posterUrl}}" alt="{{movie.title}}" />
+            </div>
+            <div>
+                <h2>
+                    {{movie.title}}
+                </h2>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Using ngClass directive to add/remove css classes based on condition -->
+
+<h4>
+    Movie Rating: <span class="badge" [ngClass]="{'bg-success': movie.rating >= 9, 'bg-primary': movie.rating >= 8 && movie.rating < 9, 'bg-danger': movie.rating == 0}"> {{movie.rating}} </span>
+</h4>
+
+<!-- Using Pipes -->
+<div>
+    BoxOffice : {{movie.revenue | currency}}
+    <br>
+    Release Date : {{movie.releaseDate | date}}
+    <br>
+    Budget: {{movie.budget | currency}}
+</div>
